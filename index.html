@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeStar - Types Pokémon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>PokeStar</h1>
+        <p>Les forces et faiblesses des types Pokémon</p>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Comprendre l'efficacité des types</h2>
+            <p>Chaque attaque de type a un multiplicateur de dégâts selon le type du Pokémon attaqué :</p>
+            <ul>
+                <li><strong>Super efficace (x2)</strong> : L'attaque inflige 2x plus de dégâts</li>
+                <li><strong>Pas très efficace (x0.5)</strong> : L'attaque inflige la moitié des dégâts</li>
+                <li><strong>Sans effet (x0)</strong> : L'attaque n'inflige aucun dégât</li>
+                <li><strong>Neutre (x1)</strong> : Pas de modification de dégâts</li>
+            </ul>
+        </section>
+
+        <section class="type-selector">
+            <h2>Sélectionner un type</h2>
+            <div id="typeButtons" class="type-grid"></div>
+        </section>
+
+        <section id="typeDetails" class="type-details hidden">
+            <h2 id="selectedTypeName">Type</h2>
+            <div class="effectiveness-grid">
+                <div class="card">
+                    <h3>Super efficace contre</h3>
+                    <div id="superEffective" class="type-list"></div>
+                </div>
+                <div class="card">
+                    <h3>Pas très efficace contre</h3>
+                    <div id="notVeryEffective" class="type-list"></div>
+                </div>
+                <div class="card">
+                    <h3>Immunisé contre</h3>
+                    <div id="immune" class="type-list"></div>
+                </div>
+                <div class="card">
+                    <h3>Faible aux attaques</h3>
+                    <div id="weakTo" class="type-list"></div>
+                </div>
+                <div class="card">
+                    <h3>Résistant aux attaques</h3>
+                    <div id="resists" class="type-list"></div>
+                </div>
+                <div class="card">
+                    <h3>Immunisé aux attaques</h3>
+                    <div id="immuneTo" class="type-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <h2>Tableau complet d'efficacité (Gen VI+)</h2>
+            <div class="chart-controls">
+                <button id="toggleChart">Afficher/Masquer le tableau</button>
+            </div>
+            <div id="typeChart" class="type-chart-container hidden">
+                <table id="chartTable"></table>
+            </div>
+        </section>
+
+        <section class="security-info">
+            <h2>Vulnérabilités de sécurité classiques (Web)</h2>
+            <details>
+                <summary>Qu'est-ce que ce sont ?</summary>
+                <p>Cette section éducative présente des vulnérabilités web classiques à connaître (à des fins pédagogiques uniquement). Ne jamais les exploiter illégalement.</p>
+            </details>
+            <div class="security-cards">
+                <div class="security-card">
+                    <h3>Cross-Site Scripting (XSS)</h3>
+                    <p><strong>Faiblesse :</strong> Injection de scripts malveillants dans des pages web vues par d'autres utilisateurs.</p>
+                    <p><strong>Impact :</strong> Vol de cookies/session, redirection, modification de contenu.</p>
+                    <p><strong>Mitigation :</strong> Échapper les entrées utilisateur, CSP (Content Security Policy), valider/sanitiser les données.</p>
+                </div>
+                <div class="security-card">
+                    <h3>Injection SQL (SQLi)</h3>
+                    <p><strong>Faiblesse :</strong> Requêtes SQL non paramétrées permettant l'injection de code.</p>
+                    <p><strong>Impact :</strong> Lecture/modification/suppression de BDD, élévation de privilèges.</p>
+                    <p><strong>Mitigation :</strong> Requêtes préparées (Prepared Statements), ORM, validation stricte.</p>
+                </div>
+                <div class="security-card">
+                    <h3>Cross-Site Request Forgery (CSRF)</h3>
+                    <p><strong>Faiblesse :</strong> Forcer un utilisateur authentifié à exécuter des actions non désirées.</p>
+                    <p><strong>Impact :</strong> Transactions non autorisées, changement de mot de passe.</p>
+                    <p><strong>Mitigation :</strong> Tokens CSRF, SameSite cookies, vérification d'origine (Origin/Referer).</p>
+                </div>
+                <div class="security-card">
+                    <h3>Clickjacking</h3>
+                    <p><strong>Faiblesse :</strong> Masquer des éléments UI dans un iframe transparent pour piéger les clics.</p>
+                    <p><strong>Impact :</strong> Actions involontaires sur des sites authentifiés.</p>
+                    <p><strong>Mitigation :</strong> En-tête X-Frame-Options ou CSP frame-ancestors.</p>
+                </div>
+                <div class="security-card">
+                    <h3>Directory Traversal</h3>
+                    <p><strong>Faiblesse :</strong> Accès non autorisé à des fichiers via "../" dans les paramètres d'URL.</p>
+                    <p><strong>Impact :</strong> Lecture de fichiers sensibles (/etc/passwd, configs), fuite d'informations.</p>
+                    <p><strong>Mitigation :</strong> Whitelist des chemins, normalisation, éviter d'inclure des chemins utilisateur.</p>
+                </div>
+                <div class="security-card">
+                    <h3>Security Misconfiguration</h3>
+                    <p><strong>Faiblesse :</strong> Configurations par défaut, erreurs exposées, permissions excessives.</p>
+                    <p><strong>Impact :</strong> Exposition d'informations, accès non autorisé.</p>
+                    <p><strong>Mitigation :</strong> Hardening, désactiver debug en prod, principe du moindre privilège.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Basé sur <a href="https://bulbapedia.bulbagarden.net/wiki/Type" target="_blank" rel="noopener noreferrer">Bulbapedia - Type</a></p>
+        <p>Créé à des fins éducatives - PokeStar</p>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>
