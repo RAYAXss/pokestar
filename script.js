@@ -152,9 +152,11 @@ function analyzeType(type) {
     return { superEffective, notVeryEffective, immune, weakTo, resists, immuneTo };
 }
 
-function renderTypeButtons() {
+function renderTypeButtons(filter = '') {
     typeButtonsContainer.innerHTML = '';
-    for (const type of TYPES) {
+    const filteredTypes = TYPES.filter(type => type.toLowerCase().includes(filter.toLowerCase()));
+    
+    for (const type of filteredTypes) {
         const btn = document.createElement('button');
         btn.className = `type-btn ${getTypeClass(type)}`;
         btn.textContent = type;
@@ -243,4 +245,16 @@ toggleChartBtn.addEventListener('click', () => {
 // Initialize
 renderTypeButtons();
 renderChart();
+
+const typeSearch = document.getElementById('typeSearch');
+typeSearch.addEventListener('input', (e) => {
+    renderTypeButtons(e.target.value);
+    if (e.target.value && activeButton) {
+        activeButton.classList.remove('active');
+        activeButton = null;
+        selectedTypeName.textContent = 'Type';
+        typeDetails.classList.add('hidden');
+    }
+});
+
 console.log('PokeStar loaded successfully');

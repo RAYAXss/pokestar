@@ -48,15 +48,25 @@ Accédez au dossier :
 cd pokestar
 ```
 
-Puis ouvrez simplement le fichier :
+Puis installez les dépendances :
 
-```text
-index.html
+```bash
+npm install
 ```
 
-dans votre navigateur.
+Vous pouvez lancer l'app de deux façons :
 
-Aucun serveur ou processus de compilation n'est nécessaire.
+### Option 1 : Avec npm (développement, hot-reload)
+```bash
+npm run dev
+```
+
+Ouvrez ensuite http://localhost:3000 dans votre navigateur.
+
+### Option 2 : Sans npm (static, ouvrez directement)
+```bash
+# Double-cliquez sur index.html ou glissez-le dans votre navigateur
+```
 
 ## 🎮 Utilisation
 

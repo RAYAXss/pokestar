@@ -1,0 +1,25 @@
+{
+  "name": "pokestar",
+  "version": "1.0.0",
+  "description": "**PokéStar** est une application web interactive permettant de consulter rapidement les **forces et faiblesses des types Pokémon**.",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RAYAXss/pokestar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RAYAXss/pokestar/issues"
+  },
+  "homepage": "https://github.com/RAYAXss/pokestar#readme",
+  "devDependencies": {
+    "vite": "^8.3.2"
+  }
+}
