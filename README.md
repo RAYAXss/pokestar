@@ -16,8 +16,8 @@ L'objectif est de proposer une interface simple et intuitive pour comprendre les
 
 ## 🧩 Technologies utilisées
 
-* **HTML5** — Structure de la page
-* **CSS3** — Mise en forme et interface
+* **HTML** — Structure de la page
+* **CSS** — Mise en forme et interface
 * **JavaScript** — Logique et interactions
 
 Aucune dépendance externe n'est nécessaire pour utiliser le projet.
@@ -69,11 +69,6 @@ Aucun serveur ou processus de compilation n'est nécessaire.
 * 🟡 **Peu efficaces**
 * 🔴 **Sans effet**
 
-## 📌 Objectif du projet
-
-Ce projet a été réalisé afin de proposer un outil simple permettant de retrouver rapidement le **tableau des types Pokémon** sans avoir à consulter manuellement un tableau complexe.
-
-Il peut également servir de projet d'entraînement pour la manipulation du **DOM**, des événements JavaScript et de la création d'interfaces web en HTML/CSS.
 
 ## 🔮 Améliorations possibles
 
