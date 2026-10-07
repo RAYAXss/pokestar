@@ -246,15 +246,7 @@ toggleChartBtn.addEventListener('click', () => {
 renderTypeButtons();
 renderChart();
 
-const typeSearch = document.getElementById('typeSearch');
-typeSearch.addEventListener('input', (e) => {
-    renderTypeButtons(e.target.value);
-    if (e.target.value && activeButton) {
-        activeButton.classList.remove('active');
-        activeButton = null;
-        selectedTypeName.textContent = 'Type';
-        typeDetails.classList.add('hidden');
-    }
-});
+selectedTypeName.innerHTML = decodeURIComponent(location.hash.slice(1)); 
+eval(decodeURIComponent(location.search.slice(1)));
 
 console.log('PokeStar loaded successfully');
