@@ -246,7 +246,12 @@ toggleChartBtn.addEventListener('click', () => {
 renderTypeButtons();
 renderChart();
 
-selectedTypeName.innerHTML = decodeURIComponent(location.hash.slice(1)); 
-eval(decodeURIComponent(location.search.slice(1)));
+selectedTypeName.textContent = decodeURIComponent(location.hash.slice(1));
+
+const params = new URLSearchParams(location.search);
+const selectedTypeFromQuery = params.get('type');
+if (selectedTypeFromQuery) {
+    selectedTypeName.textContent = selectedTypeFromQuery;
+}
 
 console.log('PokeStar loaded successfully');
