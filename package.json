@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/RAYAXss/pokestar#readme",
   "devDependencies": {
-    "vite": "^8.3.2"
+    "vite": "^8.3.5"
   },
   "dependencies": {
     "lodash": "4.18.1",
